@@ -26,8 +26,8 @@ OUTPUT_DIR = "ann_skripsi"
 RANDOM_SEED = 124
 TEST_SIZE = 0.15
 VAL_SIZE = 0.15
-MAX_EPOCHS = 500
-PATIENCE = 25
+MAX_EPOCHS = 200
+PATIENCE = 18
 MIN_DELTA = 1e-4
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 NUM_WORKERS = 0 
@@ -36,10 +36,10 @@ PIN_MEMORY = torch.cuda.is_available()
 
 MANUAL_MODEL_CONFIG ={
 "batch_size": 64,
-"learning_rate": 0.001,
-"weight_decay": 0.0005,
+"learning_rate": 5e-4,
+"weight_decay": 1e-4,
 "hidden_layers": [256, 128, 64],
-"dropout": 0.20,
+"dropout": 0.15,
 }
 MANUAL_MODEL_CONFIG = None
 
