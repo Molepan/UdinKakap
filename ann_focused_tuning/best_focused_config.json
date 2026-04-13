@@ -1,0 +1,26 @@
+{
+  "best_config": {
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "hidden_layers": [
+      128,
+      64
+    ],
+    "dropout": 0.0,
+    "max_epochs": 200,
+    "patience": 20,
+    "use_batchnorm": true,
+    "loss_name": "mse",
+    "round_to_half": false
+  },
+  "best_refit_epoch": 37,
+  "best_repeat_summary": {
+    "mean_val_rmse": 0.44592608883967166,
+    "std_val_rmse": 0.004876571466505479,
+    "mean_val_mae": 0.36124079426129657,
+    "std_val_mae": 0.0023655175072474677,
+    "target_hit_count": 0,
+    "target_hit_all_repeats": 0
+  }
+}

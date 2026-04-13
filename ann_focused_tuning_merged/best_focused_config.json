@@ -1,0 +1,25 @@
+{
+  "best_config": {
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "hidden_layers": [
+      512
+    ],
+    "dropout": 0.05,
+    "max_epochs": 250,
+    "patience": 25,
+    "use_batchnorm": true,
+    "loss_name": "huber",
+    "round_to_half": false
+  },
+  "best_refit_epoch": 52,
+  "best_repeat_summary": {
+    "mean_val_rmse": 0.44710113694484716,
+    "std_val_rmse": 0.0013216863341830047,
+    "mean_val_mae": 0.3570188283920288,
+    "std_val_mae": 0.0005726664465483215,
+    "target_hit_count": 0,
+    "target_hit_all_repeats": 0
+  }
+}

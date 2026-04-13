@@ -1,0 +1,45 @@
+{
+  "batch_size": [
+    32,
+    64
+  ],
+  "learning_rate_log10": [
+    -3.5,
+    -2.8
+  ],
+  "weight_decay_log10": [
+    -6,
+    -4
+  ],
+  "weight_decay_zero_prob": 0.2,
+  "hidden_layers_count": [
+    2,
+    3
+  ],
+  "hidden_units_first": [
+    128,
+    256
+  ],
+  "hidden_units_decay_ratio": [
+    0.5,
+    1.5
+  ],
+  "dropout": [
+    0.0,
+    0.2
+  ],
+  "max_epochs": [
+    150,
+    220
+  ],
+  "patience": [
+    10,
+    20
+  ],
+  "use_batchnorm": [
+    true
+  ],
+  "loss_name": [
+    "huber"
+  ]
+}

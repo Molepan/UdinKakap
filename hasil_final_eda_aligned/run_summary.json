@@ -1,0 +1,63 @@
+{
+  "seed": 42,
+  "data_path": "dataset5000ready.csv",
+  "n_rows_total": 5000,
+  "split_sizes": {
+    "train_before_dedup": 4340,
+    "train_after_dedup": 4266,
+    "validation": 330,
+    "test": 330
+  },
+  "preprocessing": {
+    "numeric_features": [
+      "log_harga",
+      "is_non_brand",
+      "berat_kg",
+      "tebal_mm",
+      "jumlah_lembar",
+      "ukuran_cm",
+      "panjang_meter",
+      "lebar_cm_roll",
+      "log_volume_box_cm3",
+      "jumlah_dimensi_x",
+      "panjang_nama",
+      "jumlah_token",
+      "is_bflute",
+      "is_cflute",
+      "is_foam",
+      "is_kraft",
+      "has_box_dimension",
+      "has_roll_dimension",
+      "has_yard_dimension"
+    ],
+    "low_cardinality_features": [
+      "kategori_produk",
+      "jenis_produk",
+      "warna",
+      "material",
+      "bentuk_kemasan"
+    ],
+    "high_cardinality_features": [
+      "merek",
+      "family_template"
+    ],
+    "text_feature": "nama_produk_normalized",
+    "tfidf_min_df": 3,
+    "tfidf_max_features": 2000,
+    "tfidf_ngram_range": [
+      3,
+      5
+    ]
+  },
+  "best_model": "Ridge",
+  "best_alpha": 50.0,
+  "validation_metrics": {
+    "rmse": 0.5303646149860106,
+    "mae": 0.4264976359528068
+  },
+  "test_metrics": {
+    "rmse": 0.5552119895272567,
+    "mae": 0.45744840544178117
+  },
+  "note": "Pipeline final ini mengikuti EDA: drop fitur multikolinear, gunakan indikator sparse-feature, frequency encoding untuk kategori high-cardinality, one-hot untuk kategori low-cardinality, dan TF-IDF char n-gram untuk nama produk."
+}

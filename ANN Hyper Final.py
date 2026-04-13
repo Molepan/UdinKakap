@@ -34,7 +34,7 @@ NUM_WORKERS = 0
 PIN_MEMORY = torch.cuda.is_available()
 
 # INI yang sebelumnya belum ada:
-N_TRIALS = 10
+N_TRIALS = 5
 
 SAFE_HPARAMETER_RANGE = {
     "batch_size": [32, 48, 64],

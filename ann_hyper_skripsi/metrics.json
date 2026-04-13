@@ -1,0 +1,85 @@
+{
+  "data_file": "dataset5000ready.csv",
+  "n_train": 4266,
+  "n_val": 317,
+  "n_test": 310,
+  "input_dim_after_preprocessing": 90,
+  "n_trials": 5,
+  "best_epoch": 4,
+  "best_val_rmse": 0.4985742859041449,
+  "best_val_mae": 0.3938766909698583,
+  "test_loss": 0.5405031100396187,
+  "test_rmse": 0.5607466040844812,
+  "test_mae": 0.45572668660071586,
+  "best_model_config": {
+    "batch_size": 48,
+    "learning_rate": 0.0007,
+    "weight_decay": 5e-06,
+    "hidden_layers": [
+      512,
+      256,
+      128
+    ],
+    "dropout": 0.2,
+    "loss_name": "huber",
+    "use_batchnorm": true
+  },
+  "safe_hparameter_range": {
+    "batch_size": [
+      32,
+      48,
+      64
+    ],
+    "learning_rate": [
+      0.0003,
+      0.0005,
+      0.0007,
+      0.001
+    ],
+    "weight_decay": [
+      1e-06,
+      5e-06,
+      1e-05,
+      2e-05,
+      5e-05
+    ],
+    "hidden_layers": [
+      [
+        256,
+        128
+      ],
+      [
+        320,
+        160
+      ],
+      [
+        384,
+        192,
+        96
+      ],
+      [
+        448,
+        224,
+        112
+      ],
+      [
+        512,
+        256,
+        128
+      ]
+    ],
+    "dropout": [
+      0.05,
+      0.1,
+      0.15,
+      0.2
+    ],
+    "loss_name": [
+      "huber",
+      "mse"
+    ],
+    "use_batchnorm": [
+      true
+    ]
+  }
+}

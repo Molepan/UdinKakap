@@ -1,0 +1,41 @@
+{
+  "data_mode": "real",
+  "data_source_path": "dataset2000.csv",
+  "data_source_note": "real_dataset",
+  "n_total": 2000,
+  "n_train": 1600,
+  "n_val": 200,
+  "n_test": 200,
+  "input_dim_after_preprocessing": 98,
+  "target_rmse": 0.2,
+  "target_mae": 0.2,
+  "focused_tuning_enabled": true,
+  "focused_tuning_n_iter": 24,
+  "top_k_configs_for_repeat": 5,
+  "repeat_seeds": [
+    124,
+    224,
+    324
+  ],
+  "best_refit_epoch": 52,
+  "mean_validation_rmse": 0.44710113694484716,
+  "mean_validation_mae": 0.3570188283920288,
+  "test_rmse": 0.4557679150775019,
+  "test_mae": 0.3699137568473816,
+  "test_target_hit": false,
+  "best_model_config": {
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "hidden_layers": [
+      512
+    ],
+    "dropout": 0.05,
+    "max_epochs": 250,
+    "patience": 25,
+    "use_batchnorm": true,
+    "loss_name": "huber",
+    "round_to_half": false
+  },
+  "refit_best_on_trainval": true
+}

@@ -1,24 +1,26 @@
 {
   "n_total": 2000,
-  "n_train": 1400,
-  "n_val": 300,
-  "n_test": 300,
+  "n_train": 1600,
+  "n_val": 200,
+  "n_test": 200,
   "input_dim_after_preprocessing": 84,
-  "best_epoch": 51,
-  "best_val_rmse": 0.47682375078807177,
-  "test_loss": 0.7502114816506704,
-  "test_rmse": 0.4662614089500622,
-  "test_mae": 0.37457460165023804,
-  "test_r2": 0.3256077766418457,
-  "model_config": {
-    "batch_size": 32,
-    "learning_rate": 0.0005,
-    "weight_decay": 0.0001,
+  "tuning_enabled": true,
+  "tuning_n_iter": 100,
+  "best_epoch": 55,
+  "best_val_rmse": 0.44545725092769606,
+  "test_rmse": 0.45979391900625605,
+  "test_mae": 0.369785338640213,
+  "best_model_config": {
+    "weight_decay": 0.0,
+    "patience": 20,
+    "max_epochs": 250,
+    "learning_rate": 0.001,
     "hidden_layers": [
       256,
-      128,
-      64
+      128
     ],
-    "dropout": 0.15
-  }
+    "dropout": 0.05,
+    "batch_size": 32
+  },
+  "refit_best_on_trainval": true
 }

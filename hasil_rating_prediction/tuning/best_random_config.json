@@ -1,0 +1,23 @@
+{
+  "best_config": {
+    "batch_size": 51,
+    "dropout": 0.09077937641525996,
+    "hidden_layers": [
+      212,
+      311
+    ],
+    "learning_rate": 0.0006282282481508821,
+    "loss_name": "huber",
+    "max_epochs": 211,
+    "patience": 15,
+    "use_batchnorm": true,
+    "weight_decay": 5.602322258343128e-06
+  },
+  "best_refit_epoch": 6,
+  "repeat_summary": {
+    "mean_val_rmse": 0.5136266201601912,
+    "std_val_rmse": 0.007820036537573473,
+    "mean_val_mae": 0.41109485427538556,
+    "std_val_mae": 0.007011131871068058
+  }
+}

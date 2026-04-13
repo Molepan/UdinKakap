@@ -1,0 +1,16 @@
+{
+  "best_config": {
+    "weight_decay": 0.0,
+    "patience": 20,
+    "max_epochs": 250,
+    "learning_rate": 0.001,
+    "hidden_layers": [
+      256,
+      128
+    ],
+    "dropout": 0.05,
+    "batch_size": 32
+  },
+  "best_epoch": 55,
+  "best_val_rmse": 0.44545725092769606
+}

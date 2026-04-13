@@ -1,0 +1,8 @@
+{
+  "data_mode": "real",
+  "data_source_path": "dataset2000.csv",
+  "data_source_note": "real_dataset",
+  "target_rmse": 0.2,
+  "target_mae": 0.2,
+  "device": "cpu"
+}

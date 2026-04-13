@@ -1,0 +1,90 @@
+{
+  "seed": 42,
+  "data_path": "dataset5000ready.csv",
+  "device": "cpu",
+  "n_rows_total": 5000,
+  "split_sizes": {
+    "train_before_dedup": 4340,
+    "train_after_dedup": 4266,
+    "validation": 330,
+    "test": 330
+  },
+  "preprocessing": {
+    "numeric_features": [
+      "log_harga",
+      "is_non_brand",
+      "berat_kg",
+      "tebal_mm",
+      "jumlah_lembar",
+      "ukuran_cm",
+      "panjang_meter",
+      "lebar_cm_roll",
+      "log_volume_box_cm3",
+      "jumlah_dimensi_x",
+      "panjang_nama",
+      "jumlah_token",
+      "is_bflute",
+      "is_cflute",
+      "is_foam",
+      "is_kraft",
+      "has_box_dimension",
+      "has_roll_dimension",
+      "has_yard_dimension"
+    ],
+    "low_cardinality_features": [
+      "kategori_produk",
+      "jenis_produk",
+      "warna",
+      "material",
+      "bentuk_kemasan"
+    ],
+    "high_cardinality_features": [
+      "merek",
+      "family_template"
+    ],
+    "text_feature": "nama_produk_normalized",
+    "tfidf_min_df": 3,
+    "tfidf_max_features": 2000,
+    "tfidf_ngram_range": [
+      3,
+      5
+    ],
+    "text_svd_components_requested": 96
+  },
+  "ridge_baseline": {
+    "best_alpha": 300,
+    "validation_metrics": {
+      "rmse": 0.5685089673428353,
+      "mae": 0.4545817281260635
+    },
+    "test_metrics": {
+      "rmse": 0.610346677771169,
+      "mae": 0.49722553166476163
+    }
+  },
+  "best_ann_config": {
+    "name": "ann_safe_01",
+    "hidden_layers": [
+      256,
+      128
+    ],
+    "dropout": 0.05,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "batch_size": 64,
+    "max_epochs": 160,
+    "patience": 15,
+    "use_batchnorm": true,
+    "loss_name": "huber"
+  },
+  "best_ann_best_epoch": 4,
+  "best_ann_validation_metrics": {
+    "rmse": 0.5476029891641973,
+    "mae": 0.43089438423965915
+  },
+  "best_ann_test_metrics": {
+    "rmse": 0.5916285654374812,
+    "mae": 0.4772300806912509
+  },
+  "note": "ANN ini mengikuti EDA: dedup train, drop fitur multikolinear, gunakan indikator sparse feature, one-hot untuk kategori low-cardinality, frequency encoding untuk kategori high-cardinality, dan TF-IDF char n-gram + SVD untuk nama produk."
+}

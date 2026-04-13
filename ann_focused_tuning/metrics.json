@@ -1,0 +1,39 @@
+{
+  "n_total": 2000,
+  "n_train": 1600,
+  "n_val": 200,
+  "n_test": 200,
+  "input_dim_after_preprocessing": 84,
+  "target_rmse": 0.2,
+  "target_mae": 0.2,
+  "focused_tuning_enabled": true,
+  "focused_tuning_n_iter": 24,
+  "top_k_configs_for_repeat": 5,
+  "repeat_seeds": [
+    124,
+    224,
+    324
+  ],
+  "best_refit_epoch": 37,
+  "mean_validation_rmse": 0.44592608883967166,
+  "mean_validation_mae": 0.36124079426129657,
+  "test_rmse": 0.4555877484293207,
+  "test_mae": 0.36586371064186096,
+  "test_target_hit": false,
+  "best_model_config": {
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "hidden_layers": [
+      128,
+      64
+    ],
+    "dropout": 0.0,
+    "max_epochs": 200,
+    "patience": 20,
+    "use_batchnorm": true,
+    "loss_name": "mse",
+    "round_to_half": false
+  },
+  "refit_best_on_trainval": true
+}

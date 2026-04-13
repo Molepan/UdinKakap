@@ -1,0 +1,114 @@
+{
+  "data_shape": {
+    "X": [
+      2000,
+      36
+    ],
+    "y": 2000
+  },
+  "split_shape": {
+    "train": [
+      1340,
+      36
+    ],
+    "val": [
+      330,
+      36
+    ],
+    "test": [
+      330,
+      36
+    ]
+  },
+  "hyperparameter_space": {
+    "batch_size": [
+      32,
+      64
+    ],
+    "learning_rate_log10": [
+      -3.5,
+      -2.8
+    ],
+    "weight_decay_log10": [
+      -6,
+      -4
+    ],
+    "weight_decay_zero_prob": 0.2,
+    "hidden_layers_count": [
+      2,
+      3
+    ],
+    "hidden_units_first": [
+      128,
+      256
+    ],
+    "hidden_units_decay_ratio": [
+      0.5,
+      1.5
+    ],
+    "dropout": [
+      0.0,
+      0.2
+    ],
+    "max_epochs": [
+      150,
+      220
+    ],
+    "patience": [
+      10,
+      20
+    ],
+    "use_batchnorm": [
+      true
+    ],
+    "loss_name": [
+      "huber"
+    ]
+  },
+  "baseline_mean": {
+    "validation": {
+      "rmse": 0.6613720608163478,
+      "mae": 0.5431931252826776
+    },
+    "test": {
+      "rmse": 0.7060970976973572,
+      "mae": 0.5719357756671192
+    }
+  },
+  "ridge": {
+    "validation": {
+      "rmse": 0.5309900310698749,
+      "mae": 0.42209695397001323
+    },
+    "test": {
+      "rmse": 0.5839735089940323,
+      "mae": 0.479964009920756
+    },
+    "best_alpha": 3.0
+  },
+  "ann": {
+    "best_config": {
+      "batch_size": 51,
+      "dropout": 0.09077937641525996,
+      "hidden_layers": [
+        212,
+        311
+      ],
+      "learning_rate": 0.0006282282481508821,
+      "loss_name": "huber",
+      "max_epochs": 211,
+      "patience": 15,
+      "use_batchnorm": true,
+      "weight_decay": 5.602322258343128e-06
+    },
+    "best_refit_epoch": 6,
+    "validation": {
+      "rmse": 0.5040245508712207,
+      "mae": 0.4016951024532318
+    },
+    "test": {
+      "rmse": 0.5763460057812272,
+      "mae": 0.4615148901939392
+    }
+  }
+}
