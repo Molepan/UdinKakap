@@ -1,0 +1,2 @@
+n_layers,hidden_0,hidden_1,hidden_2,dropout,learning_rate,weight_decay,batch_size,patience,best_val_rmse_tuning,final_train_rmse,final_train_mae,final_val_rmse,final_val_mae,final_test_rmse,final_test_mae
+3,16,128,256,0.3532705233244291,0.0005935583498334058,0.004890875334871858,32,25,0.4907191034444617,0.4063895609361126,0.3148209750652313,0.5179298501345676,0.4255857467651367,0.5511590730409132,0.4536169767379761

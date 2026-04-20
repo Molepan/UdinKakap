@@ -1,0 +1,23 @@
+{
+  "baseline_constant_prediction": 3.4571443326303,
+  "validation": {
+    "raw_rmse": 0.5377009902536328,
+    "raw_mae": 0.4225120170526868,
+    "clipped_rmse": 0.5377009902536328,
+    "clipped_mae": 0.4225120170526868,
+    "halfstep_rmse": 0.5406904595812323,
+    "halfstep_mae": 0.41745813952171174,
+    "halfstep_accuracy": 0.23645320197044334,
+    "within_half_point": 0.8177339901477833
+  },
+  "test": {
+    "raw_rmse": 0.5404220040207746,
+    "raw_mae": 0.4224782162645121,
+    "clipped_rmse": 0.5404220040207746,
+    "clipped_mae": 0.4224782162645121,
+    "halfstep_rmse": 0.5419074171401379,
+    "halfstep_mae": 0.4159337547450013,
+    "halfstep_accuracy": 0.22167487684729065,
+    "within_half_point": 0.8275862068965517
+  }
+}

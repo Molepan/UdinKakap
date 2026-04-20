@@ -4,78 +4,75 @@
   "n_val": 317,
   "n_test": 310,
   "input_dim_after_preprocessing": 90,
-  "n_trials": 5,
-  "best_epoch": 4,
-  "best_val_rmse": 0.4985742859041449,
-  "best_val_mae": 0.3938766909698583,
-  "test_loss": 0.5405031100396187,
-  "test_rmse": 0.5607466040844812,
-  "test_mae": 0.45572668660071586,
+  "n_trials": 200,
+  "best_epoch": 1,
+  "best_val_rmse": 0.49435291011824145,
+  "best_val_mae": 0.3859326485955753,
+  "test_loss": 0.6524191719870414,
+  "test_rmse": 0.5589835106141076,
+  "test_mae": 0.43598720719737394,
   "best_model_config": {
-    "batch_size": 48,
-    "learning_rate": 0.0007,
-    "weight_decay": 5e-06,
+    "batch_size": 128,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.005,
     "hidden_layers": [
-      512,
-      256,
-      128
+      128,
+      64
     ],
-    "dropout": 0.2,
-    "loss_name": "huber",
+    "dropout": 0.25,
+    "loss_name": "mse",
     "use_batchnorm": true
   },
   "safe_hparameter_range": {
     "batch_size": [
+      16,
       32,
-      48,
-      64
+      64,
+      128
     ],
     "learning_rate": [
+      0.0002,
       0.0003,
       0.0005,
-      0.0007,
-      0.001
+      0.0004,
+      0.0006,
+      0.0007
     ],
     "weight_decay": [
-      1e-06,
-      5e-06,
-      1e-05,
-      2e-05,
-      5e-05
+      0.005,
+      0.007,
+      0.01,
+      0.03,
+      0.003,
+      0.004,
+      0.04
     ],
     "hidden_layers": [
       [
+        128,
+        64
+      ],
+      [
+        32,
+        64
+      ],
+      [
+        128,
+        256
+      ],
+      [
         256,
-        128
-      ],
-      [
-        320,
-        160
-      ],
-      [
-        384,
-        192,
-        96
-      ],
-      [
-        448,
-        224,
-        112
-      ],
-      [
-        512,
-        256,
-        128
+        512
       ]
     ],
     "dropout": [
-      0.05,
       0.1,
       0.15,
-      0.2
+      0.2,
+      0.25,
+      0.3
     ],
     "loss_name": [
-      "huber",
       "mse"
     ],
     "use_batchnorm": [

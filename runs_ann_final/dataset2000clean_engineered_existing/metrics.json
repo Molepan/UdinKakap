@@ -1,0 +1,28 @@
+{
+  "dataset_file": "dataset2000clean.csv",
+  "feature_mode": "engineered_existing",
+  "split_source": "Split_Grouped",
+  "best_config": {
+    "weight_decay": 0.0,
+    "patience": 20,
+    "max_epochs": 250,
+    "learning_rate": 0.001,
+    "hidden_layers": [
+      256,
+      128
+    ],
+    "dropout": 0.05,
+    "batch_size": 32
+  },
+  "best_epoch": 20,
+  "stop_epoch": 40,
+  "best_val_rmse": 0.5307939479275882,
+  "historical_target_best_val_rmse": 0.44545725092769606,
+  "difference_to_target": 0.0853366969998921,
+  "test_rmse": 0.5636124428254748,
+  "test_mae": 0.4579647786689527,
+  "within_0_5": 0.5848484848484848,
+  "random_seed": 42,
+  "input_dim": 94,
+  "device": "cpu"
+}

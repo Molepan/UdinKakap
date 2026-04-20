@@ -1,0 +1,45 @@
+{
+  "data_file": "dataset5000ready.csv",
+  "device": "cpu",
+  "n_train": 4340,
+  "n_val": 330,
+  "n_test": 330,
+  "input_dim_after_preprocessing": 145,
+  "best_epoch": 9,
+  "best_val_rmse": 0.5418667719580075,
+  "best_val_mae": 0.4391888827988596,
+  "test_loss": 0.5376613916772784,
+  "test_metrics": {
+    "raw_rmse": 0.5476922085874291,
+    "raw_mae": 0.4501192483035001,
+    "clipped_rmse": 0.5476922085874291,
+    "clipped_mae": 0.4501192483035001,
+    "halfstep_rmse": 0.5552777082985894,
+    "halfstep_mae": 0.4348484848484849,
+    "halfstep_accuracy": 0.296969696969697,
+    "within_half_point": 0.8484848484848485
+  },
+  "model_config": {
+    "batch_size": 64,
+    "learning_rate": 5e-05,
+    "weight_decay": 2e-05,
+    "hidden_layers": [
+      160,
+      80,
+      40
+    ],
+    "dropout": 0.02,
+    "loss_name": "huber",
+    "norm_name": "layernorm",
+    "activation_name": "silu"
+  },
+  "max_epochs": 120,
+  "patience": 15,
+  "min_delta": 5e-05,
+  "use_weighted_sampler": false,
+  "drop_exact_duplicates": false,
+  "text_max_features": 3000,
+  "text_min_df": 3,
+  "text_svd_components": 48,
+  "category_min_count": 8
+}

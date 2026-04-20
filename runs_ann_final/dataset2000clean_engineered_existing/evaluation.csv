@@ -1,0 +1,2 @@
+dataset_file,feature_mode,split_source,best_config,best_epoch,stop_epoch,best_val_rmse,historical_target_best_val_rmse,difference_to_target,test_rmse,test_mae,within_0_5,random_seed,input_dim,device
+dataset2000clean.csv,engineered_existing,Split_Grouped,"{'weight_decay': 0.0, 'patience': 20, 'max_epochs': 250, 'learning_rate': 0.001, 'hidden_layers': [256, 128], 'dropout': 0.05, 'batch_size': 32}",20,40,0.5307939479275882,0.44545725092769606,0.0853366969998921,0.5636124428254748,0.4579647786689527,0.5848484848484848,42,94,cpu

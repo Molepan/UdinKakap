@@ -1,0 +1,65 @@
+{
+  "data_file": "dataset5000ready.csv",
+  "device": "cpu",
+  "input_dim_after_preprocessing": 137,
+  "best_trial_summary": {
+    "trial_id": 49,
+    "objective_score": 0.506235150229982,
+    "best_val_rmse": 0.506235150229982,
+    "best_val_mae": 0.3944567651459665,
+    "best_train_rmse": 0.7230703683582297,
+    "best_train_mae": 0.5740749405276391,
+    "generalization_gap": -0.2168352181282477,
+    "best_epoch": 2,
+    "batch_size": 64,
+    "learning_rate": 3e-05,
+    "weight_decay": 5e-05,
+    "hidden_layers": [
+      96,
+      48
+    ],
+    "dropout": 0.12,
+    "loss_name": "huber",
+    "norm_name": "layernorm",
+    "activation_name": "silu",
+    "text_max_features": 3000,
+    "text_min_df": 3,
+    "text_svd_components": 40,
+    "category_min_count": 12
+  },
+  "best_config": {
+    "batch_size": 64,
+    "learning_rate": 3e-05,
+    "weight_decay": 5e-05,
+    "hidden_layers": [
+      96,
+      48
+    ],
+    "dropout": 0.12,
+    "loss_name": "huber",
+    "norm_name": "layernorm",
+    "activation_name": "silu",
+    "text_max_features": 3000,
+    "text_min_df": 3,
+    "text_svd_components": 40,
+    "category_min_count": 12
+  },
+  "test_loss": 0.5968276782469316,
+  "test_metrics": {
+    "raw_rmse": 0.6171492071322354,
+    "raw_mae": 0.4913903893846454,
+    "clipped_rmse": 0.6171492071322354,
+    "clipped_mae": 0.4913903893846454,
+    "halfstep_rmse": 0.6023942130190062,
+    "halfstep_mae": 0.44696969696969696,
+    "halfstep_accuracy": 0.35454545454545455,
+    "within_half_point": 0.7818181818181819
+  },
+  "max_epochs": 40,
+  "patience": 6,
+  "min_delta": 0.0002,
+  "use_weighted_sampler": false,
+  "drop_exact_duplicates": false,
+  "tuning_overfit_penalty": 0.1,
+  "tuning_gap_tolerance": 0.015
+}

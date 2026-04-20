@@ -1,0 +1,17 @@
+{
+  "selection_mode": "closest_to_target",
+  "historical_target_best_val_rmse": 0.44545725092769606,
+  "best_experiment": {
+    "dataset_file": "dataset2000.csv",
+    "feature_mode": "raw_rebuild",
+    "split_source": "Split_Saran",
+    "best_val_rmse": 0.4639343534329753,
+    "difference_to_target": 0.01847710250527923,
+    "best_epoch": 15,
+    "stop_epoch": 35,
+    "test_rmse": 0.47831742890691237,
+    "test_mae": 0.3799729975064596,
+    "within_0_5": 0.7333333333333333,
+    "run_dir": "C:\\Users\\USER\\Documents\\Codingan Skripsi\\runs_ann_final\\dataset2000_raw_rebuild"
+  }
+}

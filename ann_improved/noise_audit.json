@@ -1,0 +1,83 @@
+{
+  "n_rows": 5000,
+  "n_groups": 1013,
+  "duplicated_rows_full": 107,
+  "duplicated_group_names": 3987,
+  "n_conflicting_input_patterns": 117,
+  "ratio_conflicting_input_patterns": 0.024610854017669333,
+  "n_rows_in_conflicting_input_patterns": 316,
+  "groups_with_multiple_ratings": 320,
+  "ratio_groups_with_multiple_ratings": 0.315893385982231,
+  "top_noisy_groups": [
+    {
+      "nama_produk_normalized": "kantong plastik laundry pp 30 cm x 50 cm",
+      "size": 70,
+      "mean": 3.2071428571428573,
+      "std": 0.7684581643203222,
+      "nunique": 6
+    },
+    {
+      "nama_produk_normalized": "plastik pe 80 cm x 120 cm",
+      "size": 13,
+      "mean": 3.1153846153846154,
+      "std": 0.7116250813527136,
+      "nunique": 6
+    },
+    {
+      "nama_produk_normalized": "plastik hd 15 cm x 30 cm",
+      "size": 12,
+      "mean": 2.875,
+      "std": 0.6784005252999683,
+      "nunique": 6
+    },
+    {
+      "nama_produk_normalized": "plastik pe 15 cm x 30 cm",
+      "size": 11,
+      "mean": 2.8181818181818183,
+      "std": 1.031327476428493,
+      "nunique": 6
+    },
+    {
+      "nama_produk_normalized": "kantong plastik laundry pp 50 cm x 75 cm",
+      "size": 78,
+      "mean": 3.3525641025641026,
+      "std": 0.4908842694234211,
+      "nunique": 5
+    },
+    {
+      "nama_produk_normalized": "plastik hd 30 cm x 40 cm",
+      "size": 77,
+      "mean": 2.7467532467532467,
+      "std": 0.6520381841386638,
+      "nunique": 5
+    },
+    {
+      "nama_produk_normalized": "kantong plastik laundry pp 60 cm x 90 cm",
+      "size": 74,
+      "mean": 3.3783783783783785,
+      "std": 0.5957084582220855,
+      "nunique": 5
+    },
+    {
+      "nama_produk_normalized": "kantong plastik laundry pp 45 cm x 65 cm",
+      "size": 70,
+      "mean": 3.25,
+      "std": 0.624093545570845,
+      "nunique": 5
+    },
+    {
+      "nama_produk_normalized": "isi staples kecil deli",
+      "size": 40,
+      "mean": 3.35,
+      "std": 0.6118488165870506,
+      "nunique": 5
+    },
+    {
+      "nama_produk_normalized": "plastik kresek putih 25 cm x 50 cm",
+      "size": 30,
+      "mean": 2.566666666666667,
+      "std": 0.7159913953120663,
+      "nunique": 5
+    }
+  ]
+}

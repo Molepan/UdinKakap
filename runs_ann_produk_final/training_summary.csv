@@ -1,0 +1,2 @@
+mode,batch_size,epochs,learning_rate,weight_decay,patience,hidden_layers,dropout,scheduler_factor,scheduler_patience,best_validation_rmse,best_validation_mae,test_rmse,test_mae
+auto,16,300,0.1,0.0002,40,"[512, 256, 128]",0.3,0.5,14,0.4157607502204071,0.26589539647102356,0.514531488028751,0.35797387758890786

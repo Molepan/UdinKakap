@@ -1,0 +1,90 @@
+{
+  "shape_full": [
+    5000,
+    33
+  ],
+  "shape_train": [
+    4340,
+    33
+  ],
+  "shape_val": [
+    330,
+    33
+  ],
+  "shape_test": [
+    330,
+    33
+  ],
+  "split_counts": {
+    "train": 4340,
+    "validation": 330,
+    "test": 330
+  },
+  "review_distribution_full": {
+    "1.0": 64,
+    "1.5": 5,
+    "2.0": 195,
+    "2.5": 513,
+    "3.0": 1244,
+    "3.5": 1537,
+    "4.0": 1069,
+    "4.5": 332,
+    "5.0": 41
+  },
+  "review_distribution_train": {
+    "1.0": 64,
+    "2.0": 169,
+    "2.5": 395,
+    "3.0": 917,
+    "3.5": 1390,
+    "4.0": 1035,
+    "4.5": 329,
+    "5.0": 41
+  },
+  "review_distribution_val": {
+    "1.5": 2,
+    "2.0": 11,
+    "2.5": 54,
+    "3.0": 181,
+    "3.5": 72,
+    "4.0": 10
+  },
+  "review_distribution_test": {
+    "1.5": 3,
+    "2.0": 15,
+    "2.5": 64,
+    "3.0": 146,
+    "3.5": 75,
+    "4.0": 24,
+    "4.5": 3
+  },
+  "review_mean_by_split": {
+    "train": 3.4172811059907833,
+    "validation": 3.015151515151515,
+    "test": 3.043939393939394
+  },
+  "review_std_by_split": {
+    "train": 0.6881614929576124,
+    "validation": 0.4159591487725031,
+    "test": 0.5130896897720626
+  },
+  "missing_ratio_top15": {
+    "kategori_produk": 0.0,
+    "review": 0.0,
+    "family_template": 0.0,
+    "jenis_produk": 0.0,
+    "merek": 0.0,
+    "warna": 0.0,
+    "material": 0.0,
+    "bentuk_kemasan": 0.0,
+    "log_harga": 0.0,
+    "is_non_brand": 0.0,
+    "berat_kg": 0.0,
+    "tebal_mm": 0.0,
+    "jumlah_lembar": 0.0,
+    "ukuran_cm": 0.0,
+    "panjang_meter": 0.0
+  },
+  "duplicated_rows_full": 107,
+  "duplicated_name_products_full": 3987
+}
