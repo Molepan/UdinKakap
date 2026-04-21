@@ -68,20 +68,21 @@ BASE_CONFIG = {
 }
 
 SEARCH_SPACE = {
-    "batch_size": [64, 64, 96],
-    "learning_rate": [2e-5, 3e-5, 4e-5, 5e-5],
+    "batch_size": [64, 96],
+    "learning_rate": [2e-5, 3e-5, 4e-5, 5e-5, 6e-5],
     "weight_decay": [7e-5, 1e-4, 1.5e-4, 2e-4],
     "hidden_layers": [
         [96, 48],
         [128, 64],
         [128, 64, 32],
+        [128, 64, 32, 16]
     ],
     "dropout": [0.10, 0.12, 0.15],
-    "text_svd_components": [24, 32, 40],
+    "text_svd_components": [32, 40],
     "category_min_count": [10, 12, 16],
 }
 
-TUNING_MAX_TRIALS = 40
+TUNING_MAX_TRIALS = 100
 TUNING_OVERFIT_PENALTY = 0.20
 TUNING_GAP_TOLERANCE = 0.010
 

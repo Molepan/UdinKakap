@@ -1,7 +1,7 @@
 {
   "batch_size": 96,
-  "learning_rate": 5e-05,
-  "weight_decay": 0.0002,
+  "learning_rate": 6e-05,
+  "weight_decay": 0.0001,
   "hidden_layers": [
     128,
     64,
@@ -13,6 +13,6 @@
   "activation_name": "silu",
   "text_max_features": 3000,
   "text_min_df": 3,
-  "text_svd_components": 32,
-  "category_min_count": 16
+  "text_svd_components": 40,
+  "category_min_count": 10
 }
