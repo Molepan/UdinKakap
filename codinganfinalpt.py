@@ -9,6 +9,7 @@ from copy import deepcopy
 
 import numpy as np
 import pandas as pd
+import joblib
 import torch
 import matplotlib
 matplotlib.use("Agg")
@@ -672,6 +673,119 @@ def build_preprocessor(text_max_features, text_min_df, text_svd_components, rand
     )
     return preprocessor
 
+
+# =========================================================
+# SAVE PREPROCESSING ARTIFACTS UNTUK DEPLOYMENT WEBSITE
+# =========================================================
+def get_feature_columns_from_preprocessor(preprocessor):
+    """
+    Menghasilkan nama fitur akhir setelah preprocessing.
+    Jumlah nama fitur ini harus sama dengan input_dim model ANN.
+    """
+    feature_columns = []
+
+    # 1. Fitur numerik: jumlahnya tetap sesuai NUMERIC_FEATURES
+    feature_columns.extend([f"num__{col}" for col in NUMERIC_FEATURES])
+
+    # 2. Fitur kategorikal: berubah menjadi banyak kolom hasil OneHotEncoder
+    try:
+        cat_pipeline = preprocessor.named_transformers_["cat"]
+        encoder = cat_pipeline.named_steps["onehot"]
+        cat_columns = encoder.get_feature_names_out(CATEGORICAL_FEATURES).tolist()
+        feature_columns.extend([f"cat__{col}" for col in cat_columns])
+    except Exception:
+        feature_columns.extend([])
+
+    # 3. Fitur teks: hasil TF-IDF yang direduksi dengan SVD
+    try:
+        txt_pipeline = preprocessor.named_transformers_["txt"]
+        tfidf_svd = txt_pipeline.named_steps["tfidf_svd"]
+        text_dim = int(getattr(tfidf_svd, "output_dim_", 0))
+        feature_columns.extend([f"txt__svd_{i+1}" for i in range(text_dim)])
+    except Exception:
+        feature_columns.extend([])
+
+    return feature_columns
+
+
+def save_preprocessing_artifacts(output_dir, preprocessor, y_scaler, feature_columns):
+    """
+    Menyimpan semua artifact preprocessing yang dibutuhkan website:
+    - preprocessor.pkl      : pipeline lengkap untuk mengubah data mentah menjadi input ANN
+    - feature_columns.pkl   : daftar nama fitur akhir setelah preprocessing
+    - scaler.pkl            : scaler target y/review, dipakai untuk inverse_transform hasil prediksi model
+    - encoder.pkl           : OneHotEncoder kategori yang sudah fit
+    - tfidf.pkl             : TfidfVectorizer teks yang sudah fit
+    - svd.pkl               : TruncatedSVD teks yang sudah fit, bisa None jika tidak dipakai
+
+    Catatan:
+    Feature scaler numerik sudah berada di dalam preprocessor.pkl.
+    Supaya tetap mudah dicek, numeric_scaler.pkl juga ikut disimpan sebagai artifact tambahan.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+
+    artifact_paths = {
+        "preprocessor": os.path.join(output_dir, "preprocessor.pkl"),
+        "feature_columns": os.path.join(output_dir, "feature_columns.pkl"),
+        "scaler": os.path.join(output_dir, "scaler.pkl"),
+        "encoder": os.path.join(output_dir, "encoder.pkl"),
+        "tfidf": os.path.join(output_dir, "tfidf.pkl"),
+        "svd": os.path.join(output_dir, "svd.pkl"),
+        "numeric_scaler": os.path.join(output_dir, "numeric_scaler.pkl"),
+        "raw_feature_columns": os.path.join(output_dir, "raw_feature_columns.pkl"),
+        "preprocessing_metadata": os.path.join(output_dir, "preprocessing_metadata.json"),
+    }
+
+    # Pipeline lengkap. Ini yang paling penting untuk website.
+    joblib.dump(preprocessor, artifact_paths["preprocessor"])
+
+    # Nama fitur hasil preprocessing. Jumlahnya harus sama dengan input_dim model.
+    joblib.dump(feature_columns, artifact_paths["feature_columns"])
+
+    # Scaler target review. Dipakai untuk mengembalikan output ANN ke skala rating asli.
+    joblib.dump(y_scaler, artifact_paths["scaler"])
+
+    # Ambil artifact dari pipeline yang sudah fit.
+    num_pipeline = preprocessor.named_transformers_["num"]
+    cat_pipeline = preprocessor.named_transformers_["cat"]
+    txt_pipeline = preprocessor.named_transformers_["txt"]
+
+    numeric_scaler = num_pipeline.named_steps["scaler"]
+    encoder = cat_pipeline.named_steps["onehot"]
+    tfidf_svd = txt_pipeline.named_steps["tfidf_svd"]
+
+    tfidf = getattr(tfidf_svd, "vectorizer_", None)
+    svd = getattr(tfidf_svd, "svd_", None)
+
+    joblib.dump(numeric_scaler, artifact_paths["numeric_scaler"])
+    joblib.dump(encoder, artifact_paths["encoder"])
+    joblib.dump(tfidf, artifact_paths["tfidf"])
+    joblib.dump(svd, artifact_paths["svd"])
+
+    raw_feature_columns = NUMERIC_FEATURES + CATEGORICAL_FEATURES + [TEXT_FEATURE]
+    joblib.dump(raw_feature_columns, artifact_paths["raw_feature_columns"])
+
+    metadata = {
+        "raw_feature_columns": raw_feature_columns,
+        "numeric_features": NUMERIC_FEATURES,
+        "categorical_features": CATEGORICAL_FEATURES,
+        "text_feature": TEXT_FEATURE,
+        "n_features_after_preprocessing": int(len(feature_columns)),
+        "feature_columns_preview": feature_columns[:20],
+        "notes": {
+            "preprocessor.pkl": "Pipeline lengkap untuk mengubah data mentah menjadi fitur numerik input ANN.",
+            "feature_columns.pkl": "Nama fitur akhir setelah preprocessing.",
+            "scaler.pkl": "Target scaler untuk inverse_transform output ANN ke rating asli.",
+            "numeric_scaler.pkl": "Scaler fitur numerik; sudah tercakup dalam preprocessor.pkl.",
+            "encoder.pkl": "OneHotEncoder kategori; sudah tercakup dalam preprocessor.pkl.",
+            "tfidf.pkl": "TfidfVectorizer teks; sudah tercakup dalam preprocessor.pkl.",
+            "svd.pkl": "TruncatedSVD teks; bisa None jika tidak dipakai.",
+        }
+    }
+    write_json(metadata, artifact_paths["preprocessing_metadata"])
+
+    return artifact_paths
+
 # =========================================================
 # ANN MODEL
 # =========================================================
@@ -963,6 +1077,10 @@ def prepare_data_bundle(train_df_raw, val_df_raw, test_df_raw, config, random_se
     y_val_scaled = y_scaler.transform(y_val.reshape(-1, 1)).astype(np.float32)
     y_test_scaled = y_scaler.transform(y_test.reshape(-1, 1)).astype(np.float32)
 
+    feature_columns = get_feature_columns_from_preprocessor(preprocessor)
+    if len(feature_columns) != int(X_train_processed.shape[1]):
+        feature_columns = [f"feature_{i}" for i in range(int(X_train_processed.shape[1]))]
+
     return {
         "X_train_processed": X_train_processed,
         "X_val_processed": X_val_processed,
@@ -977,6 +1095,8 @@ def prepare_data_bundle(train_df_raw, val_df_raw, test_df_raw, config, random_se
         "val_sample_weights": val_sample_weights,
         "test_sample_weights": test_sample_weights,
         "y_scaler": y_scaler,
+        "preprocessor": preprocessor,
+        "feature_columns": feature_columns,
         "input_dim": int(X_train_processed.shape[1]),
         "clean_train_df": clean_train_df,
         "clean_val_df": clean_val_df,
@@ -1339,19 +1459,19 @@ def run_multi_seed_evaluation(train_df_raw, val_df_raw, test_df_raw, config, eva
 
     if best_seed_artifact is not None:
         plot_training_history(best_seed_artifact["history"], output_dir, prefix=f"multiseed_best_seed_{best_seed_artifact['seed']}")
-        best_seed_model_path = os.path.join(output_dir, "best_ann_model_multiseed_best_seed.pth")
+        best_seed_model_path = os.path.join(output_dir, "best_ann_model_multiseed_best_seed.pt")
         torch.save(
-            {
-                "model_state_dict": best_seed_artifact["model_state_dict"],
-                "input_dim": best_seed_artifact["input_dim"],
-                "model_config": config,
-                "seed": best_seed_artifact["seed"],
-                "sample_weight_mode": SAMPLE_WEIGHT_MODE,
-            },
-            best_seed_model_path,
-        )
-        summary["best_seed_model_path"] = best_seed_model_path
-        write_json(summary, summary_path)
+    {
+            "model_state_dict": best_seed_artifact["model_state_dict"],
+            "input_dim": best_seed_artifact["input_dim"],
+            "model_config": config,
+            "seed": best_seed_artifact["seed"],
+            "sample_weight_mode": SAMPLE_WEIGHT_MODE,
+    },
+        best_seed_model_path,
+)
+    summary["best_seed_model_path"] = best_seed_model_path
+    write_json(summary, summary_path)
 
     return summary, results_df
 
@@ -1412,19 +1532,26 @@ def evaluate_best_trial_on_test(best_trial, best_data_bundle, output_dir, data_f
     history_path = os.path.join(output_dir, "best_history.json")
     write_json(best_history, history_path)
 
-    model_path = os.path.join(output_dir, "best_ann_model_tuned.pth")
+    model_path = os.path.join(output_dir, "best_ann_model_tuned.pt")
     torch.save(
-        {
-            "model_state_dict": model.state_dict(),
-            "input_dim": best_trial["input_dim"],
-            "model_config": best_config,
-            "best_epoch": best_trial["summary"]["best_epoch"],
-            "best_val_rmse": best_trial["summary"]["best_val_rmse"],
-            "best_val_mae": best_trial["summary"]["best_val_mae"],
-            "objective_score": best_trial["summary"]["objective_score"],
-            "sample_weight_mode": SAMPLE_WEIGHT_MODE,
-        },
-        model_path,
+    {
+        "model_state_dict": model.state_dict(),
+        "input_dim": best_trial["input_dim"],
+        "model_config": best_config,
+        "best_epoch": best_trial["summary"]["best_epoch"],
+        "best_val_rmse": best_trial["summary"]["best_val_rmse"],
+        "best_val_mae": best_trial["summary"]["best_val_mae"],
+        "objective_score": best_trial["summary"]["objective_score"],
+        "sample_weight_mode": SAMPLE_WEIGHT_MODE,
+    },
+    model_path,
+)
+
+    artifact_paths = save_preprocessing_artifacts(
+        output_dir=output_dir,
+        preprocessor=best_data_bundle["preprocessor"],
+        y_scaler=best_data_bundle["y_scaler"],
+        feature_columns=best_data_bundle["feature_columns"],
     )
 
     metrics = {
@@ -1436,6 +1563,7 @@ def evaluate_best_trial_on_test(best_trial, best_data_bundle, output_dir, data_f
         "test_loss": float(test_loss),
         "test_metrics": test_metrics,
         "sample_weight_mode": SAMPLE_WEIGHT_MODE,
+        "preprocessing_artifacts": artifact_paths,
         **meta_info,
     }
     metrics_path = os.path.join(output_dir, "final_metrics.json")
@@ -1460,6 +1588,12 @@ def evaluate_best_trial_on_test(best_trial, best_data_bundle, output_dir, data_f
     print(f"- Plot history       : {plot_path}")
     print(f"- Prediksi test      : {predictions_path}")
     print(f"- Bobot model        : {model_path}")
+    print(f"- Preprocessor       : {artifact_paths['preprocessor']}")
+    print(f"- Feature columns    : {artifact_paths['feature_columns']}")
+    print(f"- Scaler target      : {artifact_paths['scaler']}")
+    print(f"- Encoder kategori   : {artifact_paths['encoder']}")
+    print(f"- TF-IDF             : {artifact_paths['tfidf']}")
+    print(f"- SVD                : {artifact_paths['svd']}")
     return metrics
 
 # =========================================================

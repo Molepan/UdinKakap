@@ -1,18 +1,17 @@
 {
-  "batch_size": 96,
-  "learning_rate": 6e-05,
-  "weight_decay": 0.0001,
+  "batch_size": 64,
+  "learning_rate": 5.5e-05,
+  "weight_decay": 0.00015,
   "hidden_layers": [
-    128,
-    64,
-    32
+    96,
+    48
   ],
-  "dropout": 0.15,
+  "dropout": 0.18,
   "loss_name": "huber",
   "norm_name": "layernorm",
   "activation_name": "silu",
   "text_max_features": 3000,
   "text_min_df": 3,
-  "text_svd_components": 40,
-  "category_min_count": 10
+  "text_svd_components": 48,
+  "category_min_count": 12
 }
