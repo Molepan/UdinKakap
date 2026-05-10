@@ -488,7 +488,7 @@ st.markdown("""
 st.sidebar.title("Menu")
 menu = st.sidebar.radio(
     "Pilih halaman",
-    ["Home", "Uji Data Test", "Prediksi CSV", "Template Input", "Info Model"]
+    ["Home", "Uji Data Test", "Prediksi Produk", "Template Input", "Info Model"]
 )
 
 try:
@@ -507,34 +507,13 @@ except Exception as e:
 if menu == "Home":
     st.title("Prediksi Rating Produk E-Commerce Menggunakan ANN")
 
-    st.write(
-        "Website ini menggunakan model ANN hasil training. "
-        "Data mentah diproses terlebih dahulu menggunakan preprocessor.pkl, "
-        "lalu hasil fiturnya dimasukkan ke model ANN."
-    )
-
     c1, c2, c3 = st.columns(3)
     c1.metric("Input Model", artifacts["input_dim"])
     c2.metric("Best Val RMSE", artifacts["checkpoint"].get("best_val_rmse", "-"))
     c3.metric("Best Val MAE", artifacts["checkpoint"].get("best_val_mae", "-"))
 
     st.markdown("---")
-    st.subheader("Cara Menguji Data Test")
-
-    st.write("""
-    Gunakan menu **Uji Data Test** untuk memasukkan data test dari hasil training.
-
-    File yang bisa digunakan:
-
-    1. `clean_test_best_config.csv`  
-       Berisi data test bersih. Sistem akan menjalankan prediksi ulang.
-
-    2. `test_predictions_best_tuned.csv`  
-       Berisi hasil prediksi data test yang sudah dibuat saat training. Sistem hanya menghitung ulang metrik.
-
-    File tersebut biasanya ada di folder:
-    """)
-
+    st.subheader("Ringkasan Artifact")
     st.code(ARTIFACT_DIR)
 
 elif menu == "Uji Data Test":
@@ -597,7 +576,6 @@ elif menu == "Uji Data Test":
             try:
                 result, metrics, mode_message = process_test_dataframe(df_test, artifacts)
 
-                st.info(mode_message)
 
                 if metrics is not None:
                     display_metrics(metrics, title="Performa Model pada Data Test")
@@ -624,53 +602,56 @@ elif menu == "Uji Data Test":
                 st.error("Terjadi error saat menguji data test.")
                 st.code(str(e))
 
-elif menu == "Prediksi CSV":
-    st.title("Prediksi dari File CSV/XLSX")
+elif menu == "Prediksi Produk":
+    st.title("Prediksi Produk Berdasarkan Fitur")
 
-    st.write(
-        "Upload file data produk mentah. "
-        "Kolom akan distandardisasi otomatis mengikuti format training."
-    )
+    st.write("Masukkan fitur produk untuk mendapatkan prediksi rating.")
 
-    uploaded_file = st.file_uploader("Upload CSV/XLSX", type=["csv", "xlsx"], key="upload_prediksi")
+    # Input field
+    nama_produk = st.text_input("Nama Produk")
+    kategori = st.text_input("Kategori Produk")
+    merek = st.text_input("Merek")
+    warna = st.text_input("Warna")
+    material = st.text_input("Material")
+    log_harga = st.number_input("Log Harga", value=0.0)
+    berat_kg = st.number_input("Berat (kg)", value=0.0)
+    tebal_mm = st.number_input("Tebal (mm)", value=0.0)
 
-    if uploaded_file is not None:
-        df = read_uploaded_file(uploaded_file)
+    if st.button("PROSES PREDIKSI PRODUK"):
+        try:
+            df_input = pd.DataFrame([{
+                "nama_produk_normalized": nama_produk,
+                "kategori_produk": kategori,
+                "merek": merek,
+                "warna": warna,
+                "material": material,
+                "log_harga": log_harga,
+                "berat_kg": berat_kg,
+                "tebal_mm": tebal_mm,
+            }])
 
-        st.subheader("Preview Data Upload")
-        st.dataframe(df.head(20), use_container_width=True)
+            df_prepared = prepare_input_dataframe(df_input)
+            x_processed = artifacts["preprocessor"].transform(df_prepared).astype(np.float32)
+            x_tensor = torch.from_numpy(x_processed).to(DEVICE)
 
-        if st.button("PROSES PREDIKSI"):
-            try:
-                result = predict_rating(df, artifacts)
+            with torch.no_grad():
+                pred_scaled = artifacts["model"](x_tensor).cpu().numpy().reshape(-1,1)
+                pred_rating = artifacts["y_scaler"].inverse_transform(pred_scaled.reshape(-1,1)).ravel()
+                pred_clipped = clip_rating_predictions(pred_rating)
+                pred_half = round_to_half(pred_rating)
 
-                metrics = calculate_prediction_metrics(result)
+            result = df_input.copy()
+            result["prediksi_rating_raw"] = pred_rating
+            result["prediksi_rating_clipped"] = pred_clipped
+            result["prediksi_rating_halfstep"] = pred_half
 
-                if metrics is not None:
-                    display_metrics(metrics, title="Performa Model pada Data Upload")
-                else:
-                    st.warning(
-                        "Metrik evaluasi tidak dapat dihitung karena file yang diupload tidak memiliki kolom rating asli "
-                        "seperti Review, rating, actual_review, atau nilai_review. "
-                        "Sistem tetap menampilkan hasil prediksi."
-                    )
+            st.subheader("Hasil Prediksi")
+            st.dataframe(result)
 
-                st.subheader("Hasil Prediksi")
-                st.dataframe(result.head(50), use_container_width=True)
+        except Exception as e:
+            st.error("Terjadi error saat memproses prediksi.")
+            st.code(str(e))
 
-                csv_data = result.to_csv(index=False).encode("utf-8")
-                st.download_button(
-                    "Download Hasil Prediksi",
-                    csv_data,
-                    "hasil_prediksi_rating.csv",
-                    "text/csv"
-                )
-
-                display_prediction_distribution(result)
-
-            except Exception as e:
-                st.error("Terjadi error saat memproses prediksi.")
-                st.code(str(e))
 
 elif menu == "Template Input":
     st.title("Template Input CSV")
@@ -687,7 +668,82 @@ elif menu == "Template Input":
     )
 
 elif menu == "Info Model":
-    st.title("Informasi Model dan Artifact")
+    st.title("Informasi Model ANN dan Artifact")
+
+    st.subheader("Pengertian Artificial Neural Network (ANN)")
+    st.write("""
+    Artificial Neural Network (ANN) atau jaringan saraf tiruan adalah metode pemodelan
+    berbasis pembelajaran mesin yang meniru cara kerja jaringan saraf manusia dalam
+    mengenali pola pada data. ANN tersusun dari beberapa lapisan, yaitu lapisan input,
+    hidden layer, dan lapisan output.
+
+    Pada sistem ini, ANN digunakan untuk mempelajari hubungan antara fitur produk,
+    seperti harga, kategori, merek, material, ukuran, serta nama produk, terhadap nilai
+    rating produk. Setelah proses pelatihan selesai, model dapat digunakan untuk
+    memprediksi rating produk baru berdasarkan pola yang telah dipelajari dari data training.
+    """)
+
+    st.markdown("""
+    **Struktur umum ANN pada sistem ini:**
+
+    1. **Input Layer**  
+       Menerima fitur hasil preprocessing, seperti fitur numerik, kategorikal hasil encoding,
+       dan fitur teks hasil TF-IDF/SVD.
+
+    2. **Hidden Layer**  
+       Melakukan proses pembelajaran pola menggunakan neuron, fungsi aktivasi, normalisasi,
+       dan dropout.
+
+    3. **Output Layer**  
+       Menghasilkan nilai prediksi rating dalam bentuk angka kontinu, kemudian hasilnya
+       dikembalikan ke skala rating 1 sampai 5.
+    """)
+
+    st.markdown("---")
+
+    st.subheader("Metrik Evaluasi Model")
+    st.write("""
+    Karena sistem ini melakukan prediksi rating dalam bentuk nilai numerik, maka evaluasi
+    model menggunakan metrik regresi, yaitu **RMSE** dan **MAE**. Kedua metrik ini digunakan
+    untuk mengukur selisih antara rating aktual dengan rating hasil prediksi.
+    """)
+
+    st.markdown("### 1. Root Mean Squared Error (RMSE)")
+    st.write("""
+    RMSE digunakan untuk mengukur rata-rata besar kesalahan prediksi dengan memberikan
+    penalti lebih besar pada kesalahan yang nilainya besar. Semakin kecil nilai RMSE,
+    semakin baik performa model.
+    """)
+    st.latex(r"""
+    RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}
+    """)
+
+    st.markdown("### 2. Mean Absolute Error (MAE)")
+    st.write("""
+    MAE digunakan untuk menghitung rata-rata selisih absolut antara nilai rating aktual
+    dan nilai rating prediksi. Semakin kecil nilai MAE, semakin dekat hasil prediksi
+    model terhadap nilai sebenarnya.
+    """)
+    st.latex(r"""
+    MAE = \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|
+    """)
+
+    st.markdown("""
+    Keterangan:
+
+    - $n$ = jumlah data yang diuji  
+    - $y_i$ = nilai rating aktual pada data ke-i  
+    - $\hat{y}_i$ = nilai rating hasil prediksi pada data ke-i  
+    - $|y_i - \hat{y}_i|$ = selisih absolut antara rating aktual dan prediksi
+    """)
+
+    st.info(
+        "Pada penelitian ini, RMSE dan MAE digunakan sebagai metrik utama karena model ANN "
+        "memprediksi rating dalam bentuk nilai numerik. Nilai RMSE dan MAE yang semakin kecil "
+        "menunjukkan bahwa prediksi model semakin mendekati rating aktual."
+    )
+
+    st.markdown("---")
 
     st.subheader("Path Artifact")
     st.code(

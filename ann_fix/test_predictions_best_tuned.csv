@@ -1,0 +1,204 @@
+nama_produk_normalized,review_count,actual_review,predicted_review_raw,predicted_review_clipped,predicted_review_halfstep,abs_error_clipped,abs_error_halfstep
+bubble wrap global bening 2.7kg 30 cm x 25 meter,1,1.0,0.89364535,1.0,1.0,0.0,0.0
+bubble wrap global bening 3.0kg 30 cm x 25 meter,1,1.0,0.9019796,1.0,1.0,0.0,0.0
+bubble wrap global bening 3.0kg 30 cm x 50 meter,1,1.0,0.8990039,1.0,1.0,0.0,0.0
+bubble wrap global bening 3.0kg 60 cm x 25 meter,1,1.0,0.8737097,1.0,1.0,0.0,0.0
+bubble wrap global bening 3.2kg 30 cmx25 meter,1,1.0,0.94142115,1.0,1.0,0.0,0.0
+bubble wrap global bening 3.2kg 60 cm x 25 meter,1,1.0,0.89080656,1.0,1.0,0.0,0.0
+bubble wrap global hitam 2.4kg 60 cm x 25 meter,1,1.0,0.923253,1.0,1.0,0.0,0.0
+bubble wrap global hitam 3.2kg 30 cm x 100 meter,1,1.0,0.95972,1.0,1.0,0.0,0.0
+bubble wrap global hitam 3.2kg 30 cm x 50 meter,1,1.0,0.94856006,1.0,1.0,0.0,0.0
+bubble wrap gmp bening 2.2kg 30 cm x 100 meter,1,1.0,0.9997153,1.0,1.0,0.0,0.0
+bubble wrap gmp bening 2.4kg 125 cm x 25 meter,1,1.0,0.94102347,1.0,1.0,0.0,0.0
+bubble wrap gmp bening 2.4kg 60cm x 25 meter,1,1.0,0.96861863,1.0,1.0,0.0,0.0
+bubble wrap gmp bening 3.0kg 125 cm x 25 meter,1,1.0,0.925305,1.0,1.0,0.0,0.0
+bubble wrap gmp bening 3.0kg 60 cmx25 meter,1,1.0,0.94844073,1.0,1.0,0.0,0.0
+bubble wrap gmp bening 3.2kg 30 cm x 100 meter,1,1.0,0.9997153,1.0,1.0,0.0,0.0
+bubble wrap gmp hitam 2.7kg 60 cm x 100 meter,1,1.0,0.95589155,1.0,1.0,0.0,0.0
+bubble wrap gmp hitam 2.7kg 60 cmx100 meter,1,1.0,0.9585344,1.0,1.0,0.0,0.0
+bubble wrap gmp hitam 3.2kg 60 cmx25 meter,1,1.0,0.9696882,1.0,1.0,0.0,0.0
+bubble wrap non brand bening 2.4kg 125 cm x 25 meter,1,1.0,0.9244045,1.0,1.0,0.0,0.0
+bubble wrap non brand bening 3.0kg 30 cm x 100 meter,1,1.0,0.9309618,1.0,1.0,0.0,0.0
+bubble wrap non brand bening 3.0kg 60 cm x 100 meter,1,1.0,0.90965635,1.0,1.0,0.0,0.0
+bubble wrap non brand hitam 2.2kg 30 cm x 50 meter,1,1.0,0.9568152,1.0,1.0,0.0,0.0
+bubble wrap non brand hitam 2.7kg 30 cm x 100 meter,1,1.0,0.9399986,1.0,1.0,0.0,0.0
+bubble wrap non brand hitam 3.0kg 30 cm x 100 meter,1,1.0,0.94575775,1.0,1.0,0.0,0.0
+bubble wrap non brand hitam 3.2kg 125 cm x 25 meter,1,1.0,0.95396346,1.0,1.0,0.0,0.0
+bubble wrap non brand hitam 3.2kg 30 cm x 100 meter,1,1.0,0.95626754,1.0,1.0,0.0,0.0
+bubble wrap nonbrand hitam 3.2kg 30 cm x 100 meter,1,1.0,0.96039855,1.0,1.0,0.0,0.0
+bubble wrap sanpack bening 2.2kg 125 cm x 50 meter,1,1.0,0.998197,1.0,1.0,0.0,0.0
+bubble wrap sanpack bening 2.7kg 60 cm x 50 meter,1,1.0,0.974296,1.0,1.0,0.0,0.0
+bubble wrap sanpack hitam 2.2kg 60 cm x 25 meter,1,1.0,0.975903,1.0,1.0,0.0,0.0
+bubble wrap sanpack hitam 3.0kg 60cm x 100 meter,1,1.0,0.99044484,1.0,1.0,0.0,0.0
+bubble wrap sanpack hitam 3.2kg 60cmx100 meter,1,1.0,1.0225132,1.0225131511688232,1.0,0.022513151168823242,0.0
+bubble wrap smilepack bening 2.7kg 30 cmx25 meter,1,1.0,0.95844936,1.0,1.0,0.0,0.0
+bubble wrap smilepack bening 3.0kg 30cm x 25 meter,1,1.0,0.9394926,1.0,1.0,0.0,0.0
+bubble wrap smilepack hitam 2.2kg 125 cm x 25 meter,1,1.0,0.9756584,1.0,1.0,0.0,0.0
+bubble wrap smilepack hitam 2.4kg 125 cm x 50 meter,1,1.0,0.9597545,1.0,1.0,0.0,0.0
+bubble wrap smilepack hitam 2.7kg 125 cmx50 meter,1,1.0,0.9665248,1.0,1.0,0.0,0.0
+bubble wrap smilepack hitam 3.0kg 125 cm x 50 meter,1,1.0,0.9599702,1.0,1.0,0.0,0.0
+bubble wrap smilepack hitam 3.0kg 30 cm x 100 meter,1,1.0,0.96794075,1.0,1.0,0.0,0.0
+bubble wrap smilepack hitam 3.0kg 30 cm x 50 meter,1,1.0,0.9767686,1.0,1.0,0.0,0.0
+bubble wrap smilepack hitam 3.2kg 30 cm x 100 meter,1,1.0,0.97801197,1.0,1.0,0.0,0.0
+bubble wrap upack bening 2.7kg 125 cm x 50 meter,1,1.0,0.8599565,1.0,1.0,0.0,0.0
+bubble wrap upack hitam 2.2kg 30 cm x 25 meter,1,1.0,0.93204886,1.0,1.0,0.0,0.0
+bubble wrap upack hitam 3.2kg 125 cm x 50 meter,1,1.0,0.9028962,1.0,1.0,0.0,0.0
+bubble wrap upack hitam 3.2kg 60 cm x 100 meter,1,1.0,0.89940524,1.0,1.0,0.0,0.0
+bubble wrap upack hitam 3.2kg 60cmx100 meter,1,1.0,0.91461074,1.0,1.0,0.0,0.0
+cutter besar deli l150,1,1.0,0.9155376,1.0,1.0,0.0,0.0
+dispenser lakban deli,1,1.0,0.8921911,1.0,1.0,0.0,0.0
+double tape foam deli 24 mm x 5 meter,1,1.0,0.8689824,1.0,1.0,0.0,0.0
+double tape foam joyko 24 mm x 15 meter,1,1.0,0.95246696,1.0,1.0,0.0,0.0
+double tape foam joyko 36 mm x 5 meter,1,1.0,0.9390252,1.0,1.0,0.0,0.0
+double tape foam joyko 48 mmx3 meter,1,1.0,0.9436198,1.0,1.0,0.0,0.0
+double tape foam non brand 24 mm x 15 meter,1,1.0,0.9734551,1.0,1.0,0.0,0.0
+double tape foam non brand 48 mm x 10 meter,1,1.0,0.9596284,1.0,1.0,0.0,0.0
+double tape foam non brand 48 mm x 5 meter,1,1.0,0.9938296,1.0,1.0,0.0,0.0
+double tape foam yatta 24 mm x 15 meter,1,1.0,1.0112551,1.011255145072937,1.0,0.011255145072937012,0.0
+double tape foam yatta 24 mm x 3 meter,1,1.0,0.99403995,1.0,1.0,0.0,0.0
+double tape foam yatta 48 mmx10 meter,1,1.0,0.9992164,1.0,1.0,0.0,0.0
+kantong plastik laundry pp 30cmx50cm,1,1.0,0.9040906,1.0,1.0,0.0,0.0
+kantong plastik laundry pp 40 cm x 60 cm,1,1.0,0.8870612,1.0,1.0,0.0,0.0
+kantong plastik laundry pp 40 cmx60 cm,1,1.0,0.89281976,1.0,1.0,0.0,0.0
+kantong plastik laundry pp 40cmx60cm,1,1.0,0.9040906,1.0,1.0,0.0,0.0
+kantong plastik laundry pp 45 cm x 65 cm,1,1.0,0.88595843,1.0,1.0,0.0,0.0
+kantong plastik laundry pp 50 cm x 75 cm,1,1.0,0.8946906,1.0,1.0,0.0,0.0
+kantong plastik laundry pp 50cm x 75cm,1,1.0,0.9146821,1.0,1.0,0.0,0.0
+kantong plastik sampah 90cm x 120cm,1,1.0,0.86818266,1.0,1.0,0.0,0.0
+kardus packing 20 cm x 20 cm x 20 cm cflute,1,1.0,0.93878895,1.0,1.0,0.0,0.0
+kardus packing 26 cm x 20 cm x 21 cm bflute,1,1.0,0.9439174,1.0,1.0,0.0,0.0
+kardus packing 26 cm x 20 cm x 21 cm kraft,1,1.0,0.94075114,1.0,1.0,0.0,0.0
+kardus packing 30 cm x 20 cm x 30 cm kraft,1,1.0,0.96187663,1.0,1.0,0.0,0.0
+kardus packing 30 cm x 25 cm x 20 cm cflute,1,1.0,0.94377625,1.0,1.0,0.0,0.0
+kardus packing 30 cmx20 cmx30 cm cflute,1,1.0,0.95562744,1.0,1.0,0.0,0.0
+kardus packing 34 cm x 30 cm x 9 cm cflute,1,1.0,0.9583015,1.0,1.0,0.0,0.0
+kardus packing 34cm x 19cm x 9cm cflute,1,1.0,0.95016295,1.0,1.0,0.0,0.0
+kardus packing 34cmx19cmx9cm bflute,1,1.0,0.95626074,1.0,1.0,0.0,0.0
+kardus packing 40 cm x 30 cm x 20 cm bflute,1,1.0,0.95053107,1.0,1.0,0.0,0.0
+kardus packing 40 cmx30 cmx20 cm cflute,1,1.0,0.9428289,1.0,1.0,0.0,0.0
+kardus packing 45 cmx25 cmx15 cm kraft,1,1.0,0.95186824,1.0,1.0,0.0,0.0
+kardus packing 50 cm x 35 cm x 25 cm bflute,1,1.0,0.96884984,1.0,1.0,0.0,0.0
+kardus packing 50cmx35cmx25cm bflute,1,1.0,0.95626074,1.0,1.0,0.0,0.0
+kardus packing 55 cm x 35 cm x 30 cm bflute,1,1.0,0.9759984,1.0,1.0,0.0,0.0
+kardus packing 55 cm x 35 cm x 30 cm kraft,1,1.0,0.9732533,1.0,1.0,0.0,0.0
+kardus packing 65 cm x 35 cm x 30 cm cflute,1,1.0,0.9716898,1.0,1.0,0.0,0.0
+kardus singleface 200 cm x 20kg,1,1.0,0.9401662,1.0,1.0,0.0,0.0
+karung bagor lembaran 110 cm x 20 meter,1,1.0,0.97242564,1.0,1.0,0.0,0.0
+karung bagor lembaran 120 cm x 10 meter,1,1.0,0.96464497,1.0,1.0,0.0,0.0
+karung bagor lembaran 120 cm x 20 meter,1,1.0,0.9617797,1.0,1.0,0.0,0.0
+karung plastik jumbo 110 cm x 180 cm,1,1.0,0.8681337,1.0,1.0,0.0,0.0
+karung plastik jumbo 110 cmx180 cm,1,1.0,0.8741629,1.0,1.0,0.0,0.0
+karung plastik jumbo 90 cm x 120 cm,1,1.0,0.87088317,1.0,1.0,0.0,0.0
+lakban deli bening 45 mm x 80 yard,1,1.0,0.92031884,1.0,1.0,0.0,0.0
+lakban deli bening 48 mm x 70 yard,1,1.0,0.9129806,1.0,1.0,0.0,0.0
+lakban deli biru 45 mm x 75 yard,1,1.0,0.9452297,1.0,1.0,0.0,0.0
+lakban deli coklat 45 mm x 120 yard,1,1.0,0.934707,1.0,1.0,0.0,0.0
+lakban deli putih 45 mmx100 yard,1,1.0,0.9030348,1.0,1.0,0.0,0.0
+lakban deli putih 48 mm x 100 yard,1,1.0,0.90430474,1.0,1.0,0.0,0.0
+lakban fragile bening non brand 45 mm x 100 yard,1,1.0,0.94045854,1.0,1.0,0.0,0.0
+lakban fragile biru hiro 45 mm x 120 yard,1,1.0,0.96406996,1.0,1.0,0.0,0.0
+lakban fragile coklat hiro 45 mm x 75 yard,1,1.0,0.9568855,1.0,1.0,0.0,0.0
+lakban fragile merah smilepack 48 mm x 80 yard,1,1.0,0.9910187,1.0,1.0,0.0,0.0
+lakban fragile putih deli 45 mm x 65 yard,1,1.0,0.9378588,1.0,1.0,0.0,0.0
+lakban fragile putih non brand 48 mmx75 yard,1,1.0,0.93394667,1.0,1.0,0.0,0.0
+lakban fresh vegetables merah yatta 45 mm x 100 yard,1,1.0,0.9678012,1.0,1.0,0.0,0.0
+lakban hiro bening 48 mm x 70 yard,1,1.0,0.9195201,1.0,1.0,0.0,0.0
+lakban hiro bening 48 mmx70 yard,1,1.0,0.93759936,1.0,1.0,0.0,0.0
+lakban hiro biru 45 mm x 120 yard,1,1.0,0.9523314,1.0,1.0,0.0,0.0
+lakban hiro biru 45 mm x 50 yard,1,1.0,0.9783078,1.0,1.0,0.0,0.0
+lakban hiro biru 45 mm x 65 yard,1,1.0,0.953259,1.0,1.0,0.0,0.0
+lakban joyko biru 45 mm x 75 yard,1,1.0,0.9229383,1.0,1.0,0.0,0.0
+lakban joyko merah 45 mm x 100 yard,1,1.0,0.9468811,1.0,1.0,0.0,0.0
+lakban joyko putih 48 mm x 120 yard,1,1.0,0.93054706,1.0,1.0,0.0,0.0
+lakban non brand bening 48 mm x 50 yard,1,1.0,0.95370543,1.0,1.0,0.0,0.0
+lakban non brand biru 45 mm x 80 yard,1,1.0,0.97784775,1.0,1.0,0.0,0.0
+lakban non brand coklat 48 mm x 50 yard,1,1.0,0.9720689,1.0,1.0,0.0,0.0
+lakban non brand merah 45 mm x 100 yard,1,1.0,0.9530861,1.0,1.0,0.0,0.0
+lakban non brand merah 48 mm x 50 yard,1,1.0,0.96531475,1.0,1.0,0.0,0.0
+lakban non brand putih 45 mm x 90 yard,1,1.0,0.92314047,1.0,1.0,0.0,0.0
+lakban non brand putih 48 mm x 120 yard,1,1.0,0.9034814,1.0,1.0,0.0,0.0
+lakban non brand putih 48 mm x 80 yard,1,1.0,0.9071526,1.0,1.0,0.0,0.0
+lakban nonbrand bening 45 mm x 80 yard,1,1.0,0.9134941,1.0,1.0,0.0,0.0
+lakban sanpack bening 48 mm x 75 yard,1,1.0,0.9582863,1.0,1.0,0.0,0.0
+lakban sanpack biru 45 mm x 80 yard,1,1.0,1.0017974,1.0017974376678467,1.0,0.0017974376678466797,0.0
+lakban sanpack coklat 45 mm x 85 yard,1,1.0,0.96644664,1.0,1.0,0.0,0.0
+lakban sanpack merah 45 mm x 65 yard,1,1.0,1.0061212,1.0061211585998535,1.0,0.006121158599853516,0.0
+lakban sanpack merah 48 mm x 50 yard,1,1.0,1.039609,1.0396089553833008,1.0,0.03960895538330078,0.0
+lakban sanpack putih 45 mm x 90 yard,1,1.0,0.97019434,1.0,1.0,0.0,0.0
+lakban sanpack putih 48 mm x 65 yard,1,1.0,0.9292878,1.0,1.0,0.0,0.0
+lakban smilepack bening 45 mm x 65 yard,1,1.0,0.86786836,1.0,1.0,0.0,0.0
+lakban smilepack biru 45 mm x 65 yard,1,1.0,0.9390349,1.0,1.0,0.0,0.0
+lakban smilepack biru 45 mmx70 yard,1,1.0,0.9525081,1.0,1.0,0.0,0.0
+lakban smilepack coklat 45 mm x 90 yard,1,1.0,0.9628686,1.0,1.0,0.0,0.0
+lakban smilepack merah 45 mm x 90 yard,1,1.0,0.9870688,1.0,1.0,0.0,0.0
+lakban smilepack merah 48 mm x 50 yard,1,1.0,0.97760177,1.0,1.0,0.0,0.0
+lakban smilepack merah 48 mm x 70 yard,1,1.0,0.9633837,1.0,1.0,0.0,0.0
+lakban smilepack merah 48 mm x 80 yard,1,1.0,0.95651156,1.0,1.0,0.0,0.0
+lakban smilepack putih 48 mm x 90 yard,1,1.0,0.925114,1.0,1.0,0.0,0.0
+lakban unboxing biru deli 45 mm x 65 yard,1,1.0,0.9448246,1.0,1.0,0.0,0.0
+lakban unboxing biru joyko 45 mmx100 yard,1,1.0,0.91097414,1.0,1.0,0.0,0.0
+lakban unboxing biru joyko 48 mm x 85 yard,1,1.0,0.91387796,1.0,1.0,0.0,0.0
+lakban unboxing biru smilepack 48 mm x 80 yard,1,1.0,0.9643514,1.0,1.0,0.0,0.0
+lakban unboxing coklat joyko 48 mm x 50 yard,1,1.0,0.9463062,1.0,1.0,0.0,0.0
+lakban unboxing coklat sanpack 45 mm x 90 yard,1,1.0,0.9517605,1.0,1.0,0.0,0.0
+lakban unboxing merah joyko 48 mm x 90 yard,1,1.0,0.97436845,1.0,1.0,0.0,0.0
+lakban unboxing putih non brand 48 mm x 100 yard,1,1.0,0.89717704,1.0,1.0,0.0,0.0
+lakban yatta bening 45 mm x 75 yard,1,1.0,0.8693254,1.0,1.0,0.0,0.0
+lakban yatta bening 45 mm x 80 yard,1,1.0,0.86755294,1.0,1.0,0.0,0.0
+lakban yatta merah 48 mm x 50 yard,1,1.0,0.9471915,1.0,1.0,0.0,0.0
+lakban yatta merah 48 mm x 65 yard,1,1.0,0.91145843,1.0,1.0,0.0,0.0
+lakban yatta merah 48 mm x 70 yard,1,1.0,0.90727586,1.0,1.0,0.0,0.0
+lakban yatta putih 45 mm x 75 yard,1,1.0,0.87911576,1.0,1.0,0.0,0.0
+pe foam 125cm x 250 meter x 1 mm,1,1.0,0.9568217,1.0,1.0,0.0,0.0
+plastik hd 20 cm x 35 cm,1,1.0,0.977167,1.0,1.0,0.0,0.0
+plastik hd 35 cm x 55 cm,1,1.0,0.9821956,1.0,1.0,0.0,0.0
+plastik hd 50 cm x 75 cm,1,1.0,0.99368495,1.0,1.0,0.0,0.0
+plastik kresek hitam 15cm x 35cm,1,1.0,0.93739843,1.0,1.0,0.0,0.0
+plastik kresek hitam 20 cmx40 cm,1,1.0,0.91673374,1.0,1.0,0.0,0.0
+plastik kresek putih 15 cmx35 cm,1,1.0,0.9985936,1.0,1.0,0.0,0.0
+plastik pe 25cm x 40cm,1,1.0,1.0042089,1.0042089223861694,1.0,0.004208922386169434,0.0
+plastik pe 40 cm x 60 cm,1,1.0,0.97312725,1.0,1.0,0.0,0.0
+plastik pe 45 cm x 50 cm,1,1.0,1.0013075,1.001307487487793,1.0,0.0013074874877929688,0.0
+plastik polymailer biru 30 cmx40 cm,1,1.0,0.9089875,1.0,1.0,0.0,0.0
+plastik polymailer biru 35 cm x 50 cm,1,1.0,0.9275844,1.0,1.0,0.0,0.0
+plastik polymailer biru 45 cm x 60 cm,1,1.0,0.89980006,1.0,1.0,0.0,0.0
+plastik polymailer hitam 30 cm x 40 cm,1,1.0,0.8635686,1.0,1.0,0.0,0.0
+plastik polymailer hitam 40 cm x 55 cm,1,1.0,0.8683216,1.0,1.0,0.0,0.0
+plastik polymailer putih 25cm x 35cm,1,1.0,0.95602,1.0,1.0,0.0,0.0
+plastik polymailer putih 30 cm x 40 cm,1,1.0,0.93882203,1.0,1.0,0.0,0.0
+plastik polymailer silver 35 cmx50 cm,1,1.0,0.8798567,1.0,1.0,0.0,0.0
+plastik polymailer silver 45 cm x 60 cm,1,1.0,0.84433687,1.0,1.0,0.0,0.0
+plastik polymailer silver 45 cmx60 cm,1,1.0,0.8629227,1.0,1.0,0.0,0.0
+plastik polymailer silver 45cm x 60cm,1,1.0,0.8656332,1.0,1.0,0.0,0.0
+plastik sampah jumbo pe 120cmx180cm,1,1.0,0.86808753,1.0,1.0,0.0,0.0
+sticker thermal 60 mmx40 mm 1000 lembar,1,1.0,0.93872446,1.0,1.0,0.0,0.0
+sticker thermal lipat 80 mm x 80 mm 500 lembar,1,1.0,0.9490917,1.0,1.0,0.0,0.0
+tali rafia biru 1/2kg,1,1.0,0.9313183,1.0,1.0,0.0,0.0
+tali rafia biru 50kg,1,1.0,0.92858005,1.0,1.0,0.0,0.0
+tali rafia hijau 1kg,1,1.0,0.94208944,1.0,1.0,0.0,0.0
+tali rafia merah 20kg,1,1.0,0.9710349,1.0,1.0,0.0,0.0
+tape cutter deli,1,1.0,0.94596905,1.0,1.0,0.0,0.0
+thermal unboxing 60 mm x 40 mm x 1000 lembar,1,1.0,0.942928,1.0,1.0,0.0,0.0
+wrapping bening 10 cm x 150 meter,1,1.0,0.97958213,1.0,1.0,0.0,0.0
+wrapping bening 10 cm x 175 meter,1,1.0,0.9711499,1.0,1.0,0.0,0.0
+wrapping bening 10 cm x 200 meter,1,1.0,0.97685903,1.0,1.0,0.0,0.0
+wrapping bening 10 cm x 300 meter,1,1.0,0.9640767,1.0,1.0,0.0,0.0
+wrapping bening 10cm x 270 meter,1,1.0,0.9828453,1.0,1.0,0.0,0.0
+wrapping bening 25cm x 100 meter,1,1.0,0.9782865,1.0,1.0,0.0,0.0
+wrapping bening 30 cm x 270 meter,1,1.0,0.9631854,1.0,1.0,0.0,0.0
+wrapping bening 30cm x 175 meter,1,1.0,0.9767554,1.0,1.0,0.0,0.0
+wrapping bening 30cmx250 meter,1,1.0,0.98485404,1.0,1.0,0.0,0.0
+wrapping bening 50 cm x 100 meter,1,1.0,0.97285515,1.0,1.0,0.0,0.0
+wrapping bening 50 cm x 270 meter,1,1.0,0.986886,1.0,1.0,0.0,0.0
+wrapping hitam 10 cm x 100 meter,1,1.0,0.9441653,1.0,1.0,0.0,0.0
+wrapping hitam 10cmx100 meter,1,1.0,0.9164077,1.0,1.0,0.0,0.0
+wrapping hitam 25 cm x 100 meter,1,1.0,0.9734874,1.0,1.0,0.0,0.0
+wrapping hitam 25 cm x 250 meter,1,1.0,0.9774308,1.0,1.0,0.0,0.0
+wrapping hitam 25 cm x 270 meter,1,1.0,0.9547941,1.0,1.0,0.0,0.0
+wrapping hitam 30 cm x 150 meter,1,1.0,0.8938051,1.0,1.0,0.0,0.0
+wrapping hitam 30 cm x 270 meter,1,1.0,0.9027342,1.0,1.0,0.0,0.0
+wrapping hitam 30cm x 150 meter,1,1.0,0.9367955,1.0,1.0,0.0,0.0
+wrapping hitam 30cm x 250 meter,1,1.0,0.9701948,1.0,1.0,0.0,0.0
+wrapping hitam 50 cm x 150 meter,1,1.0,0.9513441,1.0,1.0,0.0,0.0
+wrapping hitam 50 cm x 175 meter,1,1.0,0.93896043,1.0,1.0,0.0,0.0
+wrapping hitam 50 cmx300 meter,1,1.0,0.94197905,1.0,1.0,0.0,0.0

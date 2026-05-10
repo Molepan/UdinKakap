@@ -1,0 +1,12 @@
+{
+  "n_rows": 1013,
+  "n_groups": 1013,
+  "duplicated_rows_full": 0,
+  "duplicated_group_names": 0,
+  "n_conflicting_input_patterns": 0,
+  "ratio_conflicting_input_patterns": 0.0,
+  "n_rows_in_conflicting_input_patterns": 0,
+  "groups_with_multiple_ratings": 0,
+  "ratio_groups_with_multiple_ratings": 0.0,
+  "top_noisy_groups": []
+}

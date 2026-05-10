@@ -1,0 +1,29 @@
+{
+  "baseline_constant_prediction": 1.0,
+  "validation": {
+    "raw_rmse": 0.0,
+    "raw_mae": 0.0,
+    "raw_mape": 0.0,
+    "clipped_rmse": 0.0,
+    "clipped_mae": 0.0,
+    "clipped_mape": 0.0,
+    "halfstep_rmse": 0.0,
+    "halfstep_mae": 0.0,
+    "halfstep_mape": 0.0,
+    "halfstep_accuracy": 1.0,
+    "within_half_point": 1.0
+  },
+  "test": {
+    "raw_rmse": 0.0,
+    "raw_mae": 0.0,
+    "raw_mape": 0.0,
+    "clipped_rmse": 0.0,
+    "clipped_mae": 0.0,
+    "clipped_mape": 0.0,
+    "halfstep_rmse": 0.0,
+    "halfstep_mae": 0.0,
+    "halfstep_mape": 0.0,
+    "halfstep_accuracy": 1.0,
+    "within_half_point": 1.0
+  }
+}

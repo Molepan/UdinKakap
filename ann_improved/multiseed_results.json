@@ -9,6 +9,7 @@
     "test_loss": 0.5590474805221182,
     "test_rmse": 0.4610780402936353,
     "test_mae": 0.3524816241757623,
+    "test_mape": 10.700637412790595,
     "test_within_half_point": 0.8916256157635468,
     "test_halfstep_accuracy": 0.2857142857142857
   },
@@ -22,6 +23,7 @@
     "test_loss": 0.5555264864649091,
     "test_rmse": 0.45225806214951136,
     "test_mae": 0.3523734573072988,
+    "test_mape": 10.878417163458941,
     "test_within_half_point": 0.8866995073891626,
     "test_halfstep_accuracy": 0.26108374384236455
   },
@@ -35,6 +37,7 @@
     "test_loss": 0.5566300353393179,
     "test_rmse": 0.4550585437834708,
     "test_mae": 0.352515380958031,
+    "test_mape": 10.772627054721621,
     "test_within_half_point": 0.8916256157635468,
     "test_halfstep_accuracy": 0.26108374384236455
   },
@@ -48,6 +51,7 @@
     "test_loss": 0.5616008002182533,
     "test_rmse": 0.45873604315120703,
     "test_mae": 0.356184321084046,
+    "test_mape": 10.99099290367644,
     "test_within_half_point": 0.8916256157635468,
     "test_halfstep_accuracy": 0.270935960591133
   },
@@ -61,6 +65,7 @@
     "test_loss": 0.546956901039396,
     "test_rmse": 0.449085894866638,
     "test_mae": 0.3475909262455156,
+    "test_mape": 10.628754218828849,
     "test_within_half_point": 0.8916256157635468,
     "test_halfstep_accuracy": 0.2660098522167488
   }

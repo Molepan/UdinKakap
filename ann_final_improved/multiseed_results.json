@@ -1,0 +1,72 @@
+[
+  {
+    "seed": 3407,
+    "best_epoch": 34,
+    "best_train_rmse": 0.4114979388164171,
+    "best_val_rmse": 0.42296278817731303,
+    "best_val_mae": 0.31582339291502104,
+    "generalization_gap": 0.011464849360895923,
+    "test_loss": 0.5306760621775547,
+    "test_rmse": 0.4421290788917502,
+    "test_mae": 0.33765686028109393,
+    "test_mape": 10.315203063448545,
+    "test_within_half_point": 0.8817733990147784,
+    "test_halfstep_accuracy": 0.29064039408866993
+  },
+  {
+    "seed": 2026,
+    "best_epoch": 34,
+    "best_train_rmse": 0.4059733099118631,
+    "best_val_rmse": 0.42747055099118897,
+    "best_val_mae": 0.32843194923964625,
+    "generalization_gap": 0.02149724107932588,
+    "test_loss": 0.5479537696380333,
+    "test_rmse": 0.4479270598342067,
+    "test_mae": 0.34806659480033836,
+    "test_mape": 10.567777495883009,
+    "test_within_half_point": 0.8866995073891626,
+    "test_halfstep_accuracy": 0.28078817733990147
+  },
+  {
+    "seed": 777,
+    "best_epoch": 35,
+    "best_train_rmse": 0.40661494197415254,
+    "best_val_rmse": 0.4297478203080059,
+    "best_val_mae": 0.32263400401975134,
+    "generalization_gap": 0.023132878333853357,
+    "test_loss": 0.5432504643066763,
+    "test_rmse": 0.44852353758448354,
+    "test_mae": 0.34646379360424473,
+    "test_mape": 10.62733936854305,
+    "test_within_half_point": 0.8768472906403941,
+    "test_halfstep_accuracy": 0.3054187192118227
+  },
+  {
+    "seed": 42,
+    "best_epoch": 30,
+    "best_train_rmse": 0.41804035236730647,
+    "best_val_rmse": 0.4348762655314451,
+    "best_val_mae": 0.3362565557357713,
+    "generalization_gap": 0.016835913164138627,
+    "test_loss": 0.557768047002736,
+    "test_rmse": 0.45455626613983197,
+    "test_mae": 0.35490204724184987,
+    "test_mape": 10.82953868722859,
+    "test_within_half_point": 0.8866995073891626,
+    "test_halfstep_accuracy": 0.28078817733990147
+  },
+  {
+    "seed": 124,
+    "best_epoch": 35,
+    "best_train_rmse": 0.42207523414656695,
+    "best_val_rmse": 0.44742452902604624,
+    "best_val_mae": 0.3425963324279033,
+    "generalization_gap": 0.02534929487947929,
+    "test_loss": 0.5568676598259968,
+    "test_rmse": 0.45740125176100654,
+    "test_mae": 0.35355420359249773,
+    "test_mape": 10.872988764020292,
+    "test_within_half_point": 0.8817733990147784,
+    "test_halfstep_accuracy": 0.28078817733990147
+  }
+]

@@ -1,5 +1,5 @@
 {
-  "data_file": "data5000fix.csv",
+  "data_file": "dataset5000ready.csv",
   "device": "cpu",
   "input_dim_after_preprocessing": 122,
   "best_trial_summary": {
@@ -60,15 +60,15 @@
   },
   "sample_weight_mode": "sqrt_review_count",
   "preprocessing_artifacts": {
-    "preprocessor": "ann_improved\\preprocessor.pkl",
-    "feature_columns": "ann_improved\\feature_columns.pkl",
-    "scaler": "ann_improved\\scaler.pkl",
-    "encoder": "ann_improved\\encoder.pkl",
-    "tfidf": "ann_improved\\tfidf.pkl",
-    "svd": "ann_improved\\svd.pkl",
-    "numeric_scaler": "ann_improved\\numeric_scaler.pkl",
-    "raw_feature_columns": "ann_improved\\raw_feature_columns.pkl",
-    "preprocessing_metadata": "ann_improved\\preprocessing_metadata.json"
+    "preprocessor": "ann_final_improved\\preprocessor.pkl",
+    "feature_columns": "ann_final_improved\\feature_columns.pkl",
+    "scaler": "ann_final_improved\\scaler.pkl",
+    "encoder": "ann_final_improved\\encoder.pkl",
+    "tfidf": "ann_final_improved\\tfidf.pkl",
+    "svd": "ann_final_improved\\svd.pkl",
+    "numeric_scaler": "ann_final_improved\\numeric_scaler.pkl",
+    "raw_feature_columns": "ann_final_improved\\raw_feature_columns.pkl",
+    "preprocessing_metadata": "ann_final_improved\\preprocessing_metadata.json"
   },
   "target_mode": "product_mean",
   "rebuild_split": true,
@@ -629,6 +629,6 @@
       }
     },
     "sample_weight_mode": "sqrt_review_count",
-    "best_seed_model_path": "ann_improved\\best_ann_model_multiseed_best_seed.pt"
+    "best_seed_model_path": "ann_final_improved\\best_ann_model_multiseed_best_seed.pt"
   }
 }

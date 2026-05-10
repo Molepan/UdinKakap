@@ -1,0 +1,60 @@
+{
+  "shape_full": [
+    1013,
+    36
+  ],
+  "shape_train": [
+    607,
+    36
+  ],
+  "shape_val": [
+    203,
+    36
+  ],
+  "shape_test": [
+    203,
+    36
+  ],
+  "split_counts": {
+    "train": 607,
+    "validation": 203,
+    "test": 203
+  },
+  "review_distribution_full": {
+    "1.0": 1013
+  },
+  "review_distribution_train": {
+    "1.0": 607
+  },
+  "review_distribution_val": {
+    "1.0": 203
+  },
+  "review_distribution_test": {
+    "1.0": 203
+  },
+  "review_mean_by_split": {
+    "train": 1.0,
+    "validation": 1.0,
+    "test": 1.0
+  },
+  "review_std_by_split": {
+    "train": 0.0,
+    "validation": 0.0,
+    "test": 0.0
+  },
+  "group_count_by_split": {
+    "train": 607,
+    "validation": 203,
+    "test": 203
+  },
+  "review_count_mean_by_split": {
+    "train": 1.0,
+    "validation": 1.0,
+    "test": 1.0
+  },
+  "review_count_median_by_split": {
+    "train": 1.0,
+    "validation": 1.0,
+    "test": 1.0
+  }
+}

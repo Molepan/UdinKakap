@@ -1,0 +1,72 @@
+[
+  {
+    "seed": 42,
+    "best_epoch": 35,
+    "best_train_rmse": 0.02329454189876253,
+    "best_val_rmse": 0.02390166076295899,
+    "best_val_mae": 0.010233513827394382,
+    "generalization_gap": 0.0006071188641964577,
+    "test_loss": 0.004208705502130972,
+    "test_rmse": 0.024157274901373284,
+    "test_mae": 0.012004943316793207,
+    "test_mape": 1.2004943316793206,
+    "test_within_half_point": 1.0,
+    "test_halfstep_accuracy": 1.0
+  },
+  {
+    "seed": 124,
+    "best_epoch": 35,
+    "best_train_rmse": 0.02466033596563902,
+    "best_val_rmse": 0.02427159200669564,
+    "best_val_mae": 0.012797362111472144,
+    "generalization_gap": -0.00038874395894338,
+    "test_loss": 0.0030570884356779858,
+    "test_rmse": 0.026114446557986802,
+    "test_mae": 0.015605855457888448,
+    "test_mape": 1.5605855457888447,
+    "test_within_half_point": 1.0,
+    "test_halfstep_accuracy": 1.0
+  },
+  {
+    "seed": 777,
+    "best_epoch": 35,
+    "best_train_rmse": 0.02393472273858804,
+    "best_val_rmse": 0.024439276113625275,
+    "best_val_mae": 0.011441331778841065,
+    "generalization_gap": 0.0005045533750372352,
+    "test_loss": 0.007078064480862979,
+    "test_rmse": 0.02633591735998967,
+    "test_mae": 0.012511661487259889,
+    "test_mape": 1.2511661487259889,
+    "test_within_half_point": 1.0,
+    "test_halfstep_accuracy": 1.0
+  },
+  {
+    "seed": 3407,
+    "best_epoch": 21,
+    "best_train_rmse": 0.052373961419252955,
+    "best_val_rmse": 0.04885069760280917,
+    "best_val_mae": 0.030366194072028098,
+    "generalization_gap": -0.0035232638164437863,
+    "test_loss": 0.007654210997589409,
+    "test_rmse": 0.05038978754293557,
+    "test_mae": 0.029985840097436763,
+    "test_mape": 2.9985840097436762,
+    "test_within_half_point": 1.0,
+    "test_halfstep_accuracy": 1.0
+  },
+  {
+    "seed": 2026,
+    "best_epoch": 1,
+    "best_train_rmse": 0.12033027830003572,
+    "best_val_rmse": 0.13084963786626022,
+    "best_val_mae": 0.03931545976347524,
+    "generalization_gap": 0.010519359566224504,
+    "test_loss": 0.21495821763729228,
+    "test_rmse": 0.10122263974219062,
+    "test_mae": 0.02893797047619749,
+    "test_mape": 2.893797047619749,
+    "test_within_half_point": 1.0,
+    "test_halfstep_accuracy": 0.9753694581280788
+  }
+]
